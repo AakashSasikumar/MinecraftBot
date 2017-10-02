@@ -2,7 +2,7 @@
 
 MinecraftBot is an AI agent that plays Minecraft on it's own (survival mode).
 
-###Features to be implemented:
+### Features to be implemented:
 1. Navigation
 2. Wood Collection
 3. Hunting/Getting Food
@@ -11,27 +11,27 @@ MinecraftBot is an AI agent that plays Minecraft on it's own (survival mode).
 6. Took Making
 7. Resource Collection (Coal, Silver ...)
 
-###Implementation:
+### Implementation:
 
 This bot will be implemented using a convolutional neural network. If you want to use this model, and you're not using Windows, you will need to use PIL's ImageGrab to get the screen image instead of pywin32's win32gui.I chose pywin32 because it's highly optimized for the Windows Platform and has a much higher FPS.
 
-###Dependencies:
+### Dependencies:
 1. TFLearn
 2. Tensorflow (I'm using the GPU version)
 3. pywin32
 4. OpenCV (>3.0)
 
 
-###Versions:
+### Versions:
 
-####v1.0
+#### v1.0
 * Used the alexnet convolutional network
 * Learning rate was 0.001 with 30 epochs,
 * Training size was somewhere around 22000
 * The agent can only control space, w, a, and d
 
-Here's a demo
-![GIF](https://media.giphy.com/media/l378k2uWWPO5nmjLO/giphy.gif)
+<a href="https://imgflip.com/gif/1wvuj7"><img src="https://i.imgflip.com/1wvuj7.gif" title="made at imgflip.com"/></a>
+<a href="https://giphy.com/gifs/minecraft-ai-neural-networks-l378k2uWWPO5nmjLO"><img src="https://media.giphy.com/media/l378k2uWWPO5nmjLO/giphy.gif" title="made at imgflip.com"/></a>
 
 The agent, knows how to keep itself floating when in water, and can avoid trees and sand blocks pretty well
 
