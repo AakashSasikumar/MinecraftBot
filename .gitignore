@@ -1,0 +1,12 @@
+
+MinecraftBot/
+Data/
+log/
+Model/
+checkpoint
+MinecraftBot-0.001-alexnet-8-epochs.model.data-00000-of-00001
+MinecraftBot-0.001-alexnet-8-epochs.model.index
+MinecraftBot-0.001-alexnet-8-epochs.model.meta
+MinecraftBot-0.001-alexnet-30-epochs.model.data-00000-of-00001
+MinecraftBot-0.001-alexnet-30-epochs.model.index
+MinecraftBot-0.001-alexnet-30-epochs.model.meta
