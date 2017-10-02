@@ -1,17 +1,19 @@
 # mAInstein
 
-MinecraftBot is an AI agent that plays Minecraft on it's own (survival mode).
+mAInstein is an AI agent that can play Minecraft on it's own.
 
 
 
 ### Features to be implemented:
-- [x] Navigation (v1.0 has done this to some extent)
+- [x] Navigation (v1.0 has accomplished this to some extent)
+- [ ] Controlling Mouse
 - [ ] Wood Collection
 - [ ] Hunting/Getting Food
-- [ ] Combat (against enemies)
-- [ ] House Making
-- [ ] Took Making
+- [ ] Combat
+- [ ] Tool Making
 - [ ] Resource Collection (Coal, Silver ...)
+- [ ] House Making
+- [ ] Start Minecraft and load the map on it's own
 
 
 
@@ -34,8 +36,9 @@ This bot will be implemented using a convolutional neural network (since we're d
 #### v1.0
 * Used the alexnet convolutional network
 * Learning rate was 0.001 with 30 epochs,
-* Training size was somewhere around 22000
+* Training size was somewhere around 22000 (around 10 - 15 minutes of gameplay)
 * The agent can only control space, w, a, and d
+* Trained only using data from day time and clear weather
 
 Here's a demo (I am moving the mouse)
 
@@ -44,6 +47,6 @@ Here's a demo (I am moving the mouse)
 
 The agent knows how to keep itself floating when in water, and can avoid trees and dirt blocks pretty well
 
-The problems with v1.0 are
-* Since I'm using creative mode, the flying mode gets switched on frequently (can fix this by chaniging game mapping)
-* It doesn't know how to jump, most of the time it just ends up moving forward
+Issues with v1.0 are
+* Since I'm using creative mode, the flying mode gets switched on frequently (can fix this by changing key mapping)
+* It doesn't know how to jump, most of the time it just ends up moving forward (need better training data)
