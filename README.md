@@ -1,4 +1,4 @@
-# MinecraftBot
+# mAInstein
 
 MinecraftBot is an AI agent that plays Minecraft on it's own (survival mode).
 
