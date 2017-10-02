@@ -31,7 +31,7 @@ This bot will be implemented using a convolutional neural network. If you want t
 * The agent can only control space, w, a, and d
 
 
-<a href="https://giphy.com/gifs/minecraft-ai-neural-networks-l378k2uWWPO5nmjLO">via GIPHY</a>
+<a href="https://giphy.com/embed/l378k2uWWPO5nmjLO"><img src="https://media.giphy.com/media/l378k2uWWPO5nmjLO/giphy.gif" title="MinecraftBot/>"</a>
 
 The agent, knows how to keep itself floating when in water, and can avoid trees and sand blocks pretty well
 
