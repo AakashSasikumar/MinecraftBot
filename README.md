@@ -30,8 +30,9 @@ This bot will be implemented using a convolutional neural network. If you want t
 * Training size was somewhere around 22000
 * The agent can only control space, w, a, and d
 
+<a href="https://imgflip.com/gif/1wvuj7"><img src="https://i.imgflip.com/1wvuj7.gif" title="made at imgflip.com"/></a>
+<a href="https://giphy.com/gifs/minecraft-ai-neural-networks-l378k2uWWPO5nmjLO"><img src="https://media.giphy.com/media/l378k2uWWPO5nmjLO/giphy.gif" title="made at imgflip.com"/></a>
 
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
 The agent, knows how to keep itself floating when in water, and can avoid trees and sand blocks pretty well
 
 The problems with v1.0 are
