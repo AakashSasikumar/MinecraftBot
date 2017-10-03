@@ -1,5 +1,7 @@
 from KeyInput import W, A, S, D, SPACE, pressKey, releaseKey
 import time
+from win32api import GetCursorPos
 
-time.sleep(5)
-pressKey(W)
+while True:
+    x, y = GetCursorPos()
+    print(x, y)
