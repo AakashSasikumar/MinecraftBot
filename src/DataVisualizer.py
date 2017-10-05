@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 
-trainingDataFile = 'Data/trainingData.npy'
+trainingDataFile = './Data/trainingDataColor-full.npy'
 trainingData = np.load(trainingDataFile)
 
 for data in trainingData:

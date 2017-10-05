@@ -6,6 +6,20 @@ from KeyPressRecorder import keyCheck
 import os
 
 
+i = 1
+trainingDataPath = 'Data/Gray/dataGRAY480x270-p{}.npy'.format(i)
+if os.path.isfile(trainingDataPath):
+    print("Loading previous data")
+    trainingData = list(np.load(trainingDataPath))
+else:
+    print("File doesn't exist, fresh start")
+    trainingData = []
+
+for i in list(range(4))[::-1]:
+    print(i+1)
+    time.sleep(1)
+
+
 def keysToOutput(keys):
     # [A, W, D, Space]
     output = [0, 0, 0, 0]    
@@ -29,27 +43,24 @@ def keysToOutput(keys):
         return [0, 0, 0, 1]
     return output
 
-trainingDataPath = '../Data/trainingDataColor-p1.npy'
-if os.path.isfile(trainingDataPath):
-    print("Loading previous data")
-    trainingData = list(np.load(trainingDataFile))
-else:
-    print("File doesn't exist, fresh start")
-    trainingData = []
-
-for i in list(range(4))[::-1]:
-    print(i+1)
-    time.sleep(1)
-
-i = 2
+paused = False
 while(True):
-    screenImage = cv2.resize(sc.getScreen(), (480, 270))
+    if not paused:
+        screenImage = cv2.resize(sc.getScreen(), (480, 270))
+        keys = keyCheck()
+        output = keysToOutput(keys)
+        trainingData.append([screenImage, output])
+        print(output)
+        if len(trainingData) % 500 == 0:
+            print(len(trainingData))
+            print("saving")
+            trainingDataPath = 'Data/Gray/dataGRAY480x270-p{}.npy'.format(i)
+            np.save(trainingDataPath, trainingData)
+            # trainingData = []
     keys = keyCheck()
-    output = keysToOutput(keys)
-    trainingData.append([screenImage, output])
-    print(output)
-    if len(trainingData) % 6000 == 0:
-        print(len(trainingData))
-        trainingDataPath = '../Data/trainingDataColor-p{}'.format(i)
-        i += 1
-        np.save(trainingDataFile, trainingData)
+    if 'T' in keys:
+        if paused:
+            paused = False
+            time.sleep(1)
+        else:
+            paused = True

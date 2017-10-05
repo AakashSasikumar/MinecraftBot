@@ -12,14 +12,14 @@ for i in list(range(4))[::-1]:
     print(i+1)
     time.sleep(1)
 
-WIDTH = 160
-HEIGHT = 90
-LR = 0.001
+WIDTH = 480
+HEIGHT = 270
+LR = 0.0001
 EPOCH = 30
-MODEL_NAME = 'MinecraftBot-{}-{}-{}-epochs.model'.format(LR, 'alexnet', EPOCH)
+MODEL_NAME = 'MinecraftBot-{}-{}-{}-epochs.model'.format(LR, 'alexnetColor', EPOCH)
 
 model = alexnet(WIDTH, HEIGHT, LR)
-model.load(MODEL_NAME)
+model.load('./TrainedModels/Color/'+MODEL_NAME)
 # print("down")
 # pyautogui.keyDown(W)
 # time.sleep(1)
@@ -27,8 +27,8 @@ model.load(MODEL_NAME)
 paused = False
 while(True):
     if not paused:
-        screenImage = cv2.resize(sc.getScreen(), (160, 90))
-        prediction = model.predict([screenImage.reshape(WIDTH, HEIGHT, 1)])
+        screenImage = cv2.resize(sc.getScreen(), (WIDTH, HEIGHT))
+        prediction = model.predict([screenImage.reshape(WIDTH, HEIGHT, 3)])
         choice = np.around(prediction).astype(int).tolist()
         print(choice)
 

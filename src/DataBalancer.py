@@ -3,7 +3,7 @@ import pandas as pd
 from collections import Counter
 from random import shuffle
 
-trainingDataPath = 'Data/trainingData.npy'
+trainingDataPath = './Data/trainingDataColor-full3.npy'
 
 trainingData = np.load(trainingDataPath)
 df = pd.DataFrame(trainingData)
@@ -17,6 +17,35 @@ Counter({'[0, 1, 0, 0]': 14641, '[0, 1, 0, 1]': 3379, '[1, 1, 0, 0]': 3199,
 '[0, 0, 0, 1]': 142, '[1, 1, 1, 1]': 9, '[1, 1, 1, 0]': 3})
 
 """
+
+"""
+This was result I got for trainingDataColor-full
+
+Counter({'[0, 1, 0, 0]': 6108, '[0, 1, 0, 1]': 1866, '[0, 1, 1, 0]': 1240,
+'[1, 1, 0, 0]': 939, '[0, 0, 0, 0]': 561, '[1, 1, 0, 1]': 477,
+'[0, 1, 1, 1]': 370, '[0, 0, 1, 0]': 234, '[1, 0, 0, 0]': 201,
+'[0, 0, 0, 1]': 4})
+
+"""
+
+"""
+This was result I got for trainingDataColor-full2
+Counter({'[0, 1, 0, 0]': 7024, '[0, 1, 0, 1]': 1597, '[1, 1, 0, 0]': 1549,
+'[0, 1, 1, 0]': 857, '[0, 0, 0, 0]': 415, '[0, 1, 1, 1]': 185,
+'[1, 0, 0, 0]': 184, '[0, 0, 1, 0]': 93, '[1, 1, 0, 1]': 92,
+'[0, 0, 0, 1]': 3, '[1, 1, 1, 1]': 1})
+
+"""
+
+"""
+This was result I got for trainingDataColor-full3
+Counter({'[0, 1, 0, 0]': 6762, '[0, 1, 0, 1]': 1351, '[1, 1, 0, 0]': 1245,
+'[0, 1, 1, 0]': 1127, '[0, 0, 0, 0]': 606, '[0, 0, 1, 0]': 299,
+'[0, 1, 1, 1]': 258, '[1, 1, 0, 1]': 224, '[1, 0, 0, 0]': 102,
+'[0, 0, 0, 1]': 25, '[1, 1, 1, 1]': 1})
+
+"""
+
 
 shuffle(trainingData)
 
@@ -76,9 +105,11 @@ for data in trainingData:
 
 up = up[:len(upSpace)]
 
-finalData = up + upSpace + right + left + rightUp + leftUp + space + \
-            leftUpSpace + rightUpSpace + None
 
-finalDataPath = 'Data/balancedTrainingData.npy'
+finalData = up + upSpace + right + left + rightUp + leftUp + space + \
+            leftUpSpace + rightUpSpace
+# + None
+
+finalDataPath = 'Data/test/balancedTrainingDataColor-p3.npy'
 np.save(finalDataPath, finalData)
 print(len(finalData))
